@@ -83,6 +83,7 @@ class BookInstance(models.Model):
         """String for representing the Model object."""
         return f'{self.id} ({self.book.title if self.book else "книга удалена"})'
 
+
     @property
     def is_overdue(self):
         """Determines if the book is overdue based on due date and current date."""

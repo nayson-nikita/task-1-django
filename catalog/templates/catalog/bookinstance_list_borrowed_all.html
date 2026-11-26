@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block title %}All borrowed books{% endblock %}
+
+{% block content %}
+  <h1>All Borrowed Books</h1>
+
+  {% if bookinstance_list %}
+  <ul>
+    {% for bookinst in bookinstance_list %}
+    <li>
+      <a href="{{ bookinst.book.get_absolute_url }}">{{ bookinst.book.title }}</a>
+      ({{ bookinst.book.author }}) —
+      <span class="{{ bookinst.status }}">
+        {{ bookinst.status }}
+      </span>
+      {% if bookinst.due_back %}
+        <p>Due back: {{ bookinst.due_back }}</p>
+      {% endif %}
+      {% if bookinst.borrower %}
+        <p>Borrower: {{ bookinst.borrower }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books borrowed.</p>
+  {% endif %}
+{% endblock %}

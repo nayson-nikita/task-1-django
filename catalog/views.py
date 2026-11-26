@@ -111,7 +111,7 @@ from .forms import RenewBookForm
 #         'form': form,
 #         'book_instance': book_instance,
 #     }
-#
+
 #     return render(request, 'catalog/book_renew_librarian.html', context)
 #
 #

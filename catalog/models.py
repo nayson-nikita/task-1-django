@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.conf import settings
 
 
- class Genre(models.Model):
+class Genre(models.Model):
     """Model representing a book genre (e.g. Science Fiction, Non Fiction)."""
     name = models.CharField(max_length=200,
                             help_text="Enter a book genre (e.g. Science Fiction, French Poetry etc.)")
